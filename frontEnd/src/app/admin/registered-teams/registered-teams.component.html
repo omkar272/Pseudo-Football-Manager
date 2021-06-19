@@ -1,0 +1,35 @@
+
+ 
+    <!-- <div class="modal-dialog modal-dialog-centered" role="document"> -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Registered Team For League</h5>
+        </div>
+        <div class="modal-body">
+
+            <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Team Name</th>
+                    <th style="width: 250px;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let team of teamList; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{teamList[i]['name']}}</td>
+                    <td>
+                      <button (click)="allowTeam(teamList[i]['teamId'])" class="btn btn-sm btn-link" >Allow Entry For League</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+        <div class="modal-footer">
+          <button (click)="onClose()" type="button" class="btn btn-danger">Close</button>
+        </div>
+      </div>
+    <!-- </div> -->
+

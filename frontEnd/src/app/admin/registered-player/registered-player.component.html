@@ -1,0 +1,46 @@
+<h2 class="header">Player List Registered For Auction</h2>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class ="b1">
+        <button (click)="onDashboardNavigate()" class="btn btn-sm btn-outline-dark" style="margin-left: 10px; margin-top: 10px;" >Admin DashBoard</button>
+      </div>
+      <table class="table table-striped table-hover" >
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Player Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Position/th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Status</th>
+            <th style="width: 300px;">Actions</th>      
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of players; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{this.players[i]['user']['firstname']}} {{this.players[i]['user']['lastname']}}</td>
+            <td>{{this.players[i]['user']['city']}}</td>
+            <td>{{this.players[i]['user']['country']}}</td>
+            <td>{{this.players[i]['user']['phone']}}</td>
+            <td>{{this.players[i]['user']['email']}}</td>
+            <td>{{this.players[i]['user']['age']}}</td>
+            <td>{{this.players[i]['position']}}</td>
+            <td>{{this.players[i]['height']}}</td>
+            <td>{{this.players[i]['weight']}}</td>
+            <td>{{this.players[i]['playerStatus']}}</td>
+            <td>
+                <button (click)="onUpdateStatus(1,this.players[i]['playerId'])" *ngIf="this.players[i]['playerAllowedFlag'] == this.NotAllowed" class="btn btn-sm btn-success" style="margin-left: 10px;" >Approve </button>
+                <button (click)="onUpdateStatus(2,this.players[i]['playerId'])" *ngIf="this.players[i]['playerAllowedFlag'] == this.Allowed" class="btn btn-sm btn-danger" style="margin-left: 10px;" >Suspend </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+    </div>

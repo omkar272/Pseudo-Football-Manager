@@ -1,0 +1,43 @@
+
+<div class="row">
+  <!-- <div class="col-md-2"></div> changed -->
+  <div class="col-md-12">
+    <div class="form singin">
+      <div class="form-group">
+        <label for="">Email</label>
+        <input [(ngModel)]="email"  type="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Password</label>
+        <input [(ngModel)]="password" type="password" class="form-control">
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-4">
+
+          <div class="form-group">
+            <button (click)="signIn()" class="btn btn-success  btn-primary ">Signin</button>
+          </div>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-3">
+          
+          <div class="form-group">
+            <button (click)="cancel()" class="btn btn-outline-secondary ">Cancel</button>
+          </div>
+        </div>
+        <!-- <div class="col-md-2"></div> -->
+        <div></div>
+
+      <div class="register">
+        <hr>
+        <label>Dont Have a Accounnt?</label>
+        <button (click)="signup()" class="btn btn-light  btn-primary ">Create Here</button>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>

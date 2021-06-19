@@ -1,0 +1,44 @@
+
+
+
+  <h2 class="header">All Sheduled Matches</h2>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+
+        <div class ="b1">
+            <button (click)="onDashboardNavigate()" class="btn btn-sm btn-outline-dark" style="margin-left: 10px; margin-top: 10px;" >Admin DashBoard</button>
+          </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>No</th>
+            <!-- <th>Thumbnail</th> -->
+            <th>First Team Name</th>
+            <th>Second Team Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Ground</th>
+            <th>Match Status</th>
+            <th style="width: 250px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let match of scheduledMatches; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{this.scheduledMatches[i]['firstTeam']['name']}}</td>
+            <td>{{this.scheduledMatches[i]['secondTeam']['name']}}</td>
+            <td>{{this.scheduledMatches[i]['matchDate']}}</td>
+            <td>{{this.scheduledMatches[i]['matchStartTime']}}</td>
+            <td>{{this.scheduledMatches[i]['ground']['groundName']}}</td>
+            <td>{{this.scheduledMatches[i]['matchStatus']}}</td>
+            <td>
+              <button (click)="onStartMatch(this.scheduledMatches[i]['matchId'])" class="btn btn-sm btn-info">Start Match</button>
+              <button (click)="onEdit(this.scheduledMatches[i]['matchId'])" class="btn btn-sm btn-warning" style="margin-left: 10px;" >Edit</button>
+              <button (click)="onDelete(this.scheduledMatches[i]['matchId'])" class="btn btn-sm btn-danger" style="margin-left: 10px;">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+    </div>

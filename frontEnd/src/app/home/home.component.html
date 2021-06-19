@@ -1,0 +1,392 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">FootBall Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pointtable">PointTable</a>
+        </li>
+  
+      </ul>
+      <div class="my-2 my-lg-0">
+        <button (click)="onLogIn()" class="btn-outline-dark btn-sm" >LogIn</button>
+      </div>
+    </div>
+  </nav>
+    
+    <div class="center">
+  
+  
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-12">
+    
+          <ngb-carousel>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m1.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+                
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m19.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m5.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m9.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m10.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m14.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m17.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m15.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img src="../assets/Images/m16.jpg" width="1710" height="700" >  
+                <div class="carousel-caption">  
+             
+                </div>  
+            </ng-template>  
+        </ngb-carousel> 
+        </div>
+        <!-- <div class="col-md-1"></div> -->
+      </div>
+  
+  
+    </div>
+
+    <br><br>
+   
+   
+    <div class="row"  *ngIf="this.noOfLiveMatch>0">
+        <div class="col-md-1"></div>
+        <div class="col-md-10"> 
+              <div class="row">
+                <div class="col-md-5"> </div>
+                    <h3 style="margin-bottom: 20px;">Live Matches</h3>
+               </div>
+    <table id="customers">
+        <thead>
+            <tr>
+              <th>No</th>
+             
+              <th>First Team Name</th>
+              <th>Goals</th>
+              <th>Second Team Name</th>
+              <th>Goals</th>
+              <th>Ground</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let match of Matches; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{this.Matches[i]['firstTeam']['name']}}</td>
+              <td>{{this.Matches[i]['firstTeamScore']}}</td>
+              <td>{{this.Matches[i]['secondTeam']['name']}}</td>
+              <td>{{this.Matches[i]['secondTeamScore']}}</td>
+              <td>{{this.Matches[i]['ground']['groundName']}}</td>
+              <td><button (click)="refresh()" class="btn btn-sm btn-link" style="margin-left: 10px;">Refresh</button></td>
+            </tr>
+          </tbody>
+       </table>
+      </div>
+    </div>
+
+
+    <br><br>
+<div style="margin-bottom: 10px;">
+    <div  class="row" *ngIf="this.noOFeaturedMatch > 0">
+      <div class="col-md-1"></div>
+       <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-5"> </div>
+              <h3 style="margin-bottom: 20px;">Featured Matches</h3>
+         </div>
+        <table id="customers">
+            <thead>
+              <tr>
+                <th>No</th>
+               
+                <th>First Team Name</th>
+                <th>Goals</th>
+                <th>Second Team Name</th>
+                <th>Goals</th>
+                <th>Ground</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let match of this.featuredMatches; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{this.featuredMatches[i]['firstTeam']['name']}}</td>
+                <td>{{this.featuredMatches[i]['firstTeamScore']}}</td>
+                <td>{{this.featuredMatches[i]['secondTeam']['name']}}</td>
+                <td>{{this.featuredMatches[i]['secondTeamScore']}}</td>
+                <td>{{this.featuredMatches[i]['ground']['groundName']}}</td>
+                <td><button (click)="refreshfeaturedmatch()" class="btn btn-sm btn-link" style="margin-left: 10px;">Refresh</button></td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+<br><br><br>
+
+
+<div class="how-section1">
+  <div class="row">
+      <div class="col-md-6 how-img">
+          <img src="../assets/Images/news1.jpg"  alt=""/>
+      </div>
+      <div class="col-md-6">
+          <h4>The Vision 2020-2023</h4>
+                      <h4 class="subheading">MAKING FOOTBALL TRULY GLOBAL: THE VISION 2020-2023.</h4>
+      <p class="text-muted">After visiting over 100 territories since being elected as FIFA President four years ago,
+         I believe we have work to do in making football truly global. The vision document available in 
+         full below is my suggested action plan for FIFA. My vision is for the organisation to help
+          develop football in all regions of the world so that many more can compete at the very 
+          highest level. The goal is to have at least 50 national teams and clubs from all continents 
+          competing fully against the current elites of the game..</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+          <h4>TOP Story</h4>
+                      <h4 class="subheading">Cristiano Ronaldo becomes top goalscorer in football history</h4>
+                      <p class="text-muted"> Cristiano Ronaldo has become the top goal-scorer in the history of his sport, netting the 760th of his career Wednesday in an Italian Super Cup final between his Juventus side and Napoli.
+
+                        The historic goal gave Juventus the lead in the 64th minute, eventually clinching the club's record-extending ninth Super Cup title.
+                        
+                        With the goal in tow, Ronaldo moves past Josef Bican's previous high-water mark of 759 official career goals to sit atop the all-time list. Cristiano Ronaldo is the top scorer in Serie A this season with 15 goals
+                         in 14 games; the 35-year-old believes he can play for "many, many more years"; Ronaldo says 
+                         winning 2022 World Cup with Portugal would be a "dream".</p>
+      </div>
+      <div class="col-md-6 how-img">
+          <img src="../assets/Images/m4.jpg"  alt=""/>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6 how-img">
+           <img src="../assets/Images/news3.jpg" width="500" height="400" alt=""/>
+      </div>
+      <div class="col-md-6">
+          <h4>Recent Updates</h4>
+                      <h4 class="subheading">FIFA threatens World Cup ban on players who take part in proposed European 'Super League'</h4>
+                      <p class="text-muted">The idea of a breakaway European 'Super League' has been emphatically rejected by FIFA and the game's six continental confederations, with the threat of a ban from the World Cup for any players that take part. Some of Europe's biggest clubs are continuing to discuss forming a breakaway European Super League - which would mean no longer playing in the Champions League and Europa League. The new league would be made up of 15 or 16 permanent members and three or four qualifiers.
+
+                      </p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+          <h4>Fifa 21 review – fancy footwork and spectacular goals</h4>
+                      <h4 class="subheading">PlayStation 4, Xbox One, PlayStation 5, Xbox Series X/S, PC; EA Sports
+                        It’s been a tough year for football, but EA Sports’ fast, fluid and updated football game is a thrilling all-round scorer</h4>
+                      <p class="text-muted"> Never mind football coming home. This year, football had to work from home. Every major competition shut down at the height of the pandemic, leaving elite athletes to train over Zoom and fans to stare at incomplete league tables. Some, like the Scottish Premiership, awarded trophies. Others spent small fortunes designing biosecure bubbles in order to continue playing, as much to avoid defaulting on huge TV contracts as for any other reason.
+
+                        Developer EA Sports was in a similar position. The show had to go on. Fifa’s online fantasy squad-building mode, Ultimate Team, props up the whole EA empire with its morally dubious focus on microtransactions. But could a game cranked out on kitchen worktops deliver on the expectations of the football-starved masses?</p>
+      </div>
+      <div class="col-md-6 how-img">
+          <img src="../assets/Images/news4.jpg" alt=""/>
+      </div>
+  </div>
+</div>
+
+
+
+    <!-- <div class='col-12'></div>  
+    <section class="banner-sec">
+            <div class="container">
+        <div class="row">
+                <div class="col-md-3">
+            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+                    <div class="card-body">
+                <div class="news-title">
+                        <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
+                      </div>
+                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+              </div>
+                  </div>
+            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Politics</span> </div>
+                    <div class="card-body">
+                <div class="news-title">
+                        <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
+                      </div>
+                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+              </div>
+                  </div>
+          </div>
+                <div class="col-md-3">
+            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/business1.jpg" alt="">
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Travel</span> </div>
+                    <div class="card-body">
+                <div class="news-title">
+                        <h2 class=" title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
+                      </div>
+                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+              </div>
+                  </div>
+            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/food.jpg" alt="">
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+                    <div class="card-body">
+                <div class="news-title">
+                        <h2 class=" title-small"><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></h2>
+                      </div>
+                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+              </div>
+                  </div>
+          </div>
+                <div class="col-md-6 top-slider">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+                   
+                    <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+              
+                    <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                        <div class="news-block">
+                    <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics1.jpg" alt=""></div>
+                    <div class="news-title">
+                            <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
+                          </div>
+                    <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                    <div class="time-text"><strong>2h ago</strong></div>
+                    <div></div>
+                  </div>
+                      </div>
+                <div class="carousel-item">
+                        <div class="news-block">
+                    <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/sport1.jpg" alt=""></div>
+                    <div class="news-title">
+                            <h2 class=" title-large"><a href="#">An Alternative Form of Mental Health Care Gains a Foothold</a></h2>
+                          </div>
+                    <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                    <div class="time-text"><strong>2h ago</strong></div>
+                    <div></div>
+                  </div>
+                      </div>
+                <div class="carousel-item">
+                        <div class="news-block">
+                    <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/health.jpg" alt=""></div>
+                    <div class="news-title">
+                            <h2 class=" title-large"><a href="#">Key Republican Senator Says She Will Not Vote for former president!</a></h2>
+                          </div>
+                    <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                    <div class="time-text"><strong>2h ago</strong></div>
+                    <div></div>
+                  </div>
+                      </div>
+              </div>
+                  </div>
+          </div>
+              </div>
+      </div>
+          </section>
+    <section class="section-01">
+            <div class="container">
+        <div class="row">
+                <div class="col-lg-8 col-md-12">
+            <h3 class="heading-large">Politics</h3>
+            <div class="">
+                    <div class="col-lg-6 card">
+                <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
+                        <div class="card-body">
+                    <div class="news-title"><a href="#">
+                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                      </a></div>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  </div>
+                      </div>
+              </div>
+                    <div class="col-lg-6 card">
+                <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+                        <div class="card-body">
+                    <div class="news-title"><a href="#">
+                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                      </a></div>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  </div>
+                      </div>
+              </div>
+                    <div class="col-lg-6 card">
+                <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
+                        <div class="card-body">
+                    <div class="news-title"><a href="#">
+                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                      </a></div>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  </div>
+                      </div>
+              </div>
+                    <div class="col-lg-6 card">
+                <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel1.jpg" alt="">
+                        <div class="card-body">
+                    <div class="news-title"><a href="#">
+                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                      </a></div>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  </div>
+                      </div>
+              </div>
+                  </div>
+          </div>
+
+              </div>
+      </div>
+          </section>
+          
+     
+          
+          
+   -->
+  
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>

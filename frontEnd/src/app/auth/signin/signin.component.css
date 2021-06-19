@@ -1,0 +1,18 @@
+.singin {
+    border: #ccc 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px black;
+     /* margin-top: 10px; */
+     /* margin-bottom: 10px; */
+     /* margin-left: 10px; */
+     /* margin-right: 10px; */
+  }
+.register{
+    text-align: center;
+}
+
+.modal-ku {
+    width: 750px;
+    margin: auto;
+  }

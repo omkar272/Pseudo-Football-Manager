@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+            <button (click)="scheduleMatch()" class="btn btn-dark" >Schdule New Match</button>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" class=" btn btn-dark" routerLink="/user/admin/featured-match" style="margin-left: 10px;">Featured Matches</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-dark" routerLink="/user/admin/live-match" style="margin-left: 10px;" >Live Matches</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-dark" routerLink="/user/admin/finished-matches" style="margin-left: 10px;">Finished Matches</a>
+        </li>
+        
+        <li class="nav-item">
+          <button (click)="RegisteredTeams()" class="btn btn-dark" >New Registered Teams</button>
+      </li>
+      
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link" class="btn btn-dark" routerLink="/home/show-pointtable" style="margin-left: 10px;">PointTable</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-dark" routerLink="/user/admin/registered-player" style="margin-left: 10px;">Registered Player</a>
+        </li> 
+      </ul>
+    </div>
+  </nav>
+
+  <h2 class="header">Team List</h2>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>No</th>
+            <!-- <th>Thumbnail</th> -->
+            <th>Team Name</th>
+            <th>NO Of Matches Played</th>
+            <th>No Of Wins</th>
+            <th>No Of Lose </th>
+            <th>No Of Draws</th>
+            <th style="width: 250px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of teamList; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{teamList[i]['name']}}</td>
+            <td>{{teamList[i]['noOfMatchPlayed']}}</td>
+            <td>{{teamList[i]['noOfWin']}}</td>
+            <td>{{teamList[i]['noOfLose']}}</td>
+            <td>{{teamList[i]['noOfDraws']}}</td>
+            <td>
+              <!-- <button (click)="onBan(teamList[i]['teamId'])" class="btn btn-sm btn-danger" style="margin-left: 10px;">Ban Team</button> -->
+              <button (click)="onPlayerList(teamList[i]['teamId'],teamList[i]['name'])" class="btn btn-sm btn-link" style="margin-left: 10px;">Players In Team</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+    </div>

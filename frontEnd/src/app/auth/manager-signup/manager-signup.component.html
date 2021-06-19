@@ -1,0 +1,79 @@
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div>
+      <h3 class="header"></h3>
+    </div>
+  </div>
+
+  <div class="modal-header">
+    <h3 class="modal-title" id="exampleModalLongTitle"> Team Manager Signup Form</h3>
+    
+   
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="form singin">
+        <div class="form-group">
+          <label for="">First Name</label>
+          <input [(ngModel)]="firstName" type="text" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Last Name</label>
+          <input [(ngModel)]="lastName" type="text" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Mobile</label>
+          <input [(ngModel)]="phone" type="tel" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Email</label>
+          <input [(ngModel)]="email" type="email" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label for="">Date Of Birth</label>
+          <input [(ngModel)]="dob" type="date" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Age</label>
+          <input [(ngModel)]="age" type="number" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Password</label>
+          <input [(ngModel)]="password" type="password" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Confirm Password</label>
+          <input [(ngModel)]="confirmPassword" type="password" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">Country</label>
+          <input [(ngModel)]="country" type="text" class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="">City</label>
+          <input [(ngModel)]="city" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter Your Team Name</label>
+            <input [(ngModel)]="teamname" type="text" class="form-control">
+          </div>
+        <div class="form-group">
+          <button (click)="onSignup()" class="btn btn-info float-right">Register</button>
+          <button (click)="onCancel()" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  

@@ -1,0 +1,24 @@
+.header{
+
+    margin:auto;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-top: 35px;
+}
+btn{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+table{
+margin-top: 20px;
+
+}
+
+td{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+}

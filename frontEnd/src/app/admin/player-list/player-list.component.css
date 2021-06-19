@@ -1,0 +1,13 @@
+
+.modal .modal-dialog {
+  max-width: 1000px;
+}
+
+h5{
+    margin:auto;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
